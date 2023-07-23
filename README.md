@@ -2,12 +2,14 @@
 
 A simple subgraph for tracking a single erc721 smart contract.
 
+Link to see what this is like live: [Here](https://thegraph.com/hosted-service/subgraph/mercuricchloride/erc721-substream)
+
 # Quickstart
 
 Make sure you have the latest versions of the following installed:
-- Rust
-- Graph-cli
-- substreams-cli
+- Rust [Link to install](https://rustup.rs/)
+- Graph-cli [Link to install](https://thegraph.com/docs/en/cookbook/quick-start/#2-install-the-graph-cli)
+- substreams-cli [Link to install](https://substreams.streamingfast.io/getting-started/installing-the-cli)
 
 ## 1. Update the `ADDRESS` and `START_BLOCK` variables in `src/lib.rs`
 
