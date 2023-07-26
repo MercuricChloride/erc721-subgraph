@@ -14,7 +14,7 @@ use helpers::*;
 use erc721::events::{Approval as ApprovalEvent, Transfer as TransferEvent};
 
 pub const ADDRESS: &str = "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D";
-const START_BLOCK: u64 = 13090020;
+const START_BLOCK: u64 = 12287507;
 
 #[substreams::handlers::map]
 fn map_transfers(block: eth::v2::Block) -> Result<Transfers, substreams::errors::Error> {

@@ -21,7 +21,7 @@ binaries:
 modules:
   - name: map_transfers
     kind: map
-    initialBlock: 13090020
+    initialBlock: 12287507
     inputs:
       - source: sf.ethereum.type.v2.Block
     output:
@@ -29,7 +29,7 @@ modules:
 
   - name: map_approvals
     kind: map
-    initialBlock: 13090020
+    initialBlock: 12287507
     inputs:
       - source: sf.ethereum.type.v2.Block
     output:
@@ -37,7 +37,7 @@ modules:
 
   - name: graph_out
     kind: map
-    initialBlock: 13090020
+    initialBlock: 12287507
     inputs:
       - source: sf.substreams.v1.Clock
       - map: map_transfers

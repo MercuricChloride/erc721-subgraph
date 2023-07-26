@@ -10,34 +10,34 @@ pub fn transfers_to_table_changes(tables: &mut Tables, transfers: &Transfers) {
         // handle the transfer
         let key = format!("{}-{}", transfer.tx_hash, transfer.token_id);
         let row = tables.update_row("Transfer", key);
-        row.set("from", transfer.from.clone());
-        row.set("to", transfer.to.clone());
-        row.set("tokenId", transfer.token_id.clone());
+        row.set("from", &transfer.from);
+        row.set("to", &transfer.to);
+        row.set("tokenId", &transfer.token_id);
 
         // handle the accounts
-        tables.create_row("Account", transfer.from.clone());
-        tables.create_row("Account", transfer.to.clone());
+        tables.create_row("Account", &transfer.from);
+        tables.create_row("Account", &transfer.to);
 
         // handle updating the token owner
         tables
-            .update_row("Token", format!("{}", transfer.token_id))
+            .update_row("Token", format!("{}", &transfer.token_id))
             .set("collection", ADDRESS.to_string())
-            .set("owner", transfer.to.clone());
+            .set("owner", &transfer.to);
     }
 }
 
 pub fn approvals_to_table_changes(tables: &mut Tables, approvals: &Approvals) {
     for approval in approvals.approvals.iter() {
         // handle the approval
-        let key = format!("{}-{}", approval.tx_hash, approval.token_id);
+        let key = format!("{}-{}", &approval.tx_hash, approval.token_id);
         let row = tables.update_row("Approval", key);
-        row.set("owner", approval.owner.clone());
-        row.set("approved", approval.approved.clone());
-        row.set("tokenId", approval.token_id.clone());
+        row.set("owner", &approval.owner);
+        row.set("approved", &approval.approved);
+        row.set("tokenId", &approval.token_id);
 
         // handle creation of accounts
-        tables.create_row("Account", approval.owner.clone());
-        tables.create_row("Account", approval.approved.clone());
+        tables.create_row("Account", &approval.owner);
+        tables.create_row("Account", &approval.approved);
     }
 }
 

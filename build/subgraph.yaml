@@ -1,6 +1,6 @@
 specVersion: 0.0.4
-description: ERC-721-Subgraph
-repository: https://github.com/streamingfast/substreams-uniswap-v3.git
+description: A generic ERC721 subgraph built by @blind_nabler from the GraphBuildersDAO
+repository: https://github.com/MercuricChloride/erc721-subgraph
 schema:
   file: schema.graphql
 dataSources:

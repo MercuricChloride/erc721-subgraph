@@ -1,4 +1,3 @@
-#(should have Account, Collection, Token, Transfer, Approval entities)
 type Collection @entity {
   id: ID! #address of the contract
   tokens: [Token!]! @derivedFrom(field: "collection") #tokens that belong to the contractA
@@ -29,8 +28,4 @@ type Token @entity {
 type Account @entity {
   id: ID! #Address of the account
   tokens: [Token!]! @derivedFrom(field: "owner") #tokens that the account owns
-  #approvals: [Approval!]! @derivedFrom(field: "owner") #approvals that the account has given
-  #approvalsReceived: [Approval!]! @derivedFrom(field: "approved") #approvals that the account has received
-  #transfers: [Transfer!]! @derivedFrom(field: "from") #transfers that the account has sent
-  #transfersReceived: [Transfer!]! @derivedFrom(field: "to") #transfers that the account has received
 }
